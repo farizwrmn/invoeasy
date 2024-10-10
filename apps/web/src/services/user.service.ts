@@ -31,3 +31,19 @@ export const updateUser = async (id: string, formData: any) => {
     console.error(err);
   }
 };
+
+export const getUsers = async () => {
+  try {
+    const token = localStorage.getItem('token');
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const { data } = await instance.get(`/users`, config);
+    const user = data?.data;
+    return user;
+  } catch (err) {
+    console.error(err);
+  }
+};
