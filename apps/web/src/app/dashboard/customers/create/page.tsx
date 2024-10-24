@@ -145,7 +145,7 @@ const Page = () => {
                 />
               </div>
 
-              {/* <div className="form-control">
+              <div className="form-control">
                 <label
                   htmlFor="paymentMethod"
                   className="block text-sm font-medium text-gray-50"
@@ -169,7 +169,7 @@ const Page = () => {
                   <option value="OVO">OVO</option>
                   <option value="Gopay">Gopay</option>
                 </select>
-              </div> */}
+              </div>
 
               <div className="flex flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4 justify-center">
                 <button

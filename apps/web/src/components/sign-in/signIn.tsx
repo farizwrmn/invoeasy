@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useRouter } from 'next/navigation';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
@@ -13,8 +13,6 @@ import Logo from '../logo/logo';
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { IUsers } from '@/interfaces/user.interface';
-import { useAppSelector } from '@/lib/hooks';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -23,24 +21,11 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required('Password is required'),
 });
 
-type Props = {
-  user: IUsers;
-};
-
-const LoginView = ({}: Props) => {
-  const { status, user } = useAppSelector((state) => state.auth);
+const LoginView = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const container = useRef(null);
   gsap.registerPlugin(useGSAP);
-
-  useEffect(() => {
-    if (user.role === 'admin') {
-      router.push('/dashboard');
-    } else if (user.role === 'user') {
-      router.push('/dashboard/billings');
-    }
-  }, [user, router]);
 
   const LoginForm = withFormik<FormProps, FormValues>({
     mapPropsToValues: (props) => ({
@@ -55,6 +40,7 @@ const LoginView = ({}: Props) => {
         const result = await dispatch(signIn({ email, password }));
         if (!result) throw new Error('Email or Password incorrect');
         resetForm();
+        router.push('/dashboard');
       } catch (err: any) {
         console.error(err);
         toast.error(err.message);

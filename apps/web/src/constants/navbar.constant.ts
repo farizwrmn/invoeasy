@@ -4,9 +4,8 @@ import { MdOutlineDesignServices } from 'react-icons/md';
 import { TbStatusChange } from 'react-icons/tb';
 import { SiHomebridge } from 'react-icons/si';
 import { IoIosPeople } from 'react-icons/io';
-import { FaMoneyBillWaveAlt } from 'react-icons/fa';
 
-export const AdminLinkItems: Array<UserLinkItem> = [
+export const LinkItems: Array<UserLinkItem> = [
   {
     name: 'Home',
     icon: SiHomebridge,
@@ -30,14 +29,5 @@ export const AdminLinkItems: Array<UserLinkItem> = [
     icon: IoIosPeople,
     href: '/dashboard/customers',
     key: 'Customers',
-  },
-];
-
-export const UserLinkItems: Array<UserLinkItem> = [
-  {
-    name: 'Billings',
-    icon: FaMoneyBillWaveAlt,
-    href: '/dashboard/billings',
-    key: 'Billings',
   },
 ];

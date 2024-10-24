@@ -118,9 +118,6 @@ const NavBar = ({
                       <p className="text-gray-800 text-sm mx-3 font-bold">
                         {user.name}
                       </p>
-                      <p className="text-green-400 text-sm font-bold font-mono">
-                        {user.role === 'admin' ? '(Admin)' : '(User)'}
-                      </p>
                     </div>
                     <p className="text-gray-800 text-sm mx-3">{user.email}</p>
                   </div>

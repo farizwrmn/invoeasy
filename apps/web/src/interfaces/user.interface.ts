@@ -9,7 +9,6 @@ export interface IUserProfile {
   phone?: string;
   gender?: string;
   birthDate?: string;
-  role?: string;
 }
 
 export interface IUserPassword {

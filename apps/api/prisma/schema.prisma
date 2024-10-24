@@ -20,8 +20,6 @@ model User {
   birthDate             DateTime?      @map(name: "birth_date")
   createdDate           DateTime       @default(now()) @map(name: "created_date")
   updatedDate           DateTime       @updatedAt @map(name: "updated_date")
-  role                  String         @default("user")
-  bill                  String?
   customer              Customer[]    
   invoice               Invoice[] 
   item                  Item[]

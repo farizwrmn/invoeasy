@@ -11,7 +11,6 @@ type User = {
   phone?: string;
   gender?: string;
   birthDate?: string;
-  role?: string;
 };
 
 type Status = {
@@ -33,7 +32,6 @@ const initialState: Auth = {
     phone: '',
     gender: '',
     birthDate: '',
-    role: '',
   },
   status: {
     isLogin: false,
@@ -89,7 +87,6 @@ export const signIn = (params: IUsers) => async (dispatch: Dispatch) => {
         phone: user?.phone,
         gender: user?.gender,
         birthDate: user?.birthDate,
-        role: user?.role,
       }),
     );
 
@@ -136,7 +133,6 @@ export const checkToken = (token: string) => async (dispatch: Dispatch) => {
         phone: user?.phone,
         gender: user?.gender,
         birthDate: user?.birthDate,
-        role: user?.role,
       }),
     );
 
