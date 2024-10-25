@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "npx cypress verify & cypress run --component",
     "vercel-build": "cd ../api && npx prisma generate && npx prisma migrate deploy && cd ../web && next build",
-    "prepare": "npx husky install"
+    "prepare": "npx husky install",
+    "postinstall": "if [ -d .git ]; then npx husky install; fi"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
