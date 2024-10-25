@@ -9,7 +9,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "npx husky install",
     "postprepare": "bash -c 'chmod ug+x .husky/*'",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build"
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "postinstall": "if [ \"$NODE_ENV\" != \"production\" ]; then npx husky install; fi"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.2",
