@@ -8,7 +8,7 @@
     "serve": "next start -p $PORT",
     "lint": "next lint",
     "test": "npx cypress verify & cypress run --component",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "vercel-build": "cd ../api && npx prisma generate && npx prisma migrate deploy && cd ../web && next build",
     "prepare": "npx husky install"
   },
   "dependencies": {
