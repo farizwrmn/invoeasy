@@ -28,6 +28,23 @@ Run command on specific app with options.
 
 Example : `npm run seqeulize --workspace=api -- --db:migrate`
 
+# Database Setup
+
+The backend uses PostgreSQL via Prisma. You can provision a free database using services such as [Neon](https://neon.tech) or [Supabase](https://supabase.com).
+
+### Using Neon (free tier)
+1. Create a Neon project and database.
+2. Copy the connection string.
+3. Duplicate `apps/api/.env.example` as `apps/api/.env` and fill in `POSTGRES_PRISMA_URL` and `POSTGRES_URL_NON_POOLING` with the connection string.
+4. Apply migrations:
+   ```bash
+   npm run migrate --workspace=api
+   ```
+5. Start the development server:
+   ```bash
+   npm run dev --workspace=api
+   ```
+
 # Rules
 
 ## Commit & Pull Request
